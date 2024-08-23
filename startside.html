@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DogSpray Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Back to Top Button Styles */
+      #backToTopBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed position - stays in place */
+        bottom: 20px; /* Position from the bottom of the page */
+        right: 30px; /* Position from the right of the page */
+        z-index: 99; /* Ensure it appears above other content */
+        font-size: 24px; /* Increase font size for the arrow */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #555; /* Dark background */
+        color: white; /* White text */
+        cursor: pointer; /* Add a pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+      }
+
+      #backToTopBtn:hover {
+        background-color: #333; /* Darker background on hover */
+      }
+
+      /* Buy Now Button Container Styles */
+      .buy-now-container {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .buy-now-container form {
+        display: inline-block;
+      }
+
+      /* Buy Now Button Styles */
+      .btn {
+        background-color: #f76c6c; /* Lys rosa */
+        color: #fff; /* Hvit tekst */
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #e65d5d; /* Mørkere rosa */
+        transform: scale(1.05);
+      }
+
+      .btn:active {
+        background-color: #cc5555; /* Enda mørkere rosa */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo-nav">
+        <div class="logo">
+          <img src="logo.png" alt="Voffis Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#main">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <section id="main">
+      <div class="container">
+        <div class="main-content">
+          <div class="text-content">
+            <h1>Ready to Taste the Best?</h1>
+            <p>
+              Our dog food spray makes every meal irresistible for your dog.
+              Perfect for picky eaters!
+            </p>
+            <a href="#products" class="btn">Shop Now</a>
+          </div>
+          <div class="image-content">
+            <img src="dog_running.png" alt="Dog Food and Spray" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="products">
+      <div class="container">
+        <h2>Our Products</h2>
+        <form id="orderForm" onsubmit="sendEmail(event)">
+          <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+              <img src="kyllingflaske.png" alt="Product 1" />
+              <h3>Voffis kyllingspray</h3>
+              <p>
+                A delicious and nutritious spray for all dogs. Perfect for
+                adding flavor to any meal.
+              </p>
+              <p class="price">30kr</p>
+              <label for="kyllingspray-quantity">Quantity:</label>
+              <select id="kyllingspray-quantity" name="kyllingspray-quantity">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <!-- Product 2 (Middle Product) -->
+            <div class="product-card">
+              <img src="lamflaske.png" alt="Product 2" />
+              <h3>Voffis lamspray</h3>
+              <p>
+                A savory option that your dog will love. Boosts the taste of any
+                dish.
+              </p>
+              <p class="price">30kr</p>
+              <label for="lamspray-quantity">Quantity:</label>
+              <select id="lamspray-quantity" name="lamspray-quantity">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+              <img src="beefflaske.png" alt="Product 3" />
+              <h3>Voffis beefspray</h3>
+              <p>
+                A gourmet experience for your dog. Made with natural
+                ingredients.
+              </p>
+              <p class="price">30kr</p>
+              <label for="beefflaske-quantity">Quantity:</label>
+              <select id="beefflaske-quantity" name="beefflaske-quantity">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Single Buy Now Button -->
+          <div class="buy-now-container">
+            <button type="submit" class="btn">Buy Now</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer (Contact Section) -->
+    <footer id="contact">
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Practical Information</a></li>
+            <li><a href="#">Map</a></li>
+            <li><a href="#">Dog Guide</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>About DogSpray</h3>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>DogSpray Center</h3>
+          <p><strong>Opening Hours</strong></p>
+          <p>Monday-Saturday: 9-17</p>
+          <p>Sunday: 10-16</p>
+          <p><strong>Customer Service</strong></p>
+          <p>(+47) 47364857</p>
+          <p>Mon-Fri: 10.00-12.00; 12:45-15.00</p>
+          <p>Closed 12.00-12.45</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" title="Go to top">&#9650;</button>
+
+    <script>
+      // Get the button
+      let backToTopBtn = document.getElementById("backToTopBtn");
+
+      // When the user scrolls down 100px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      backToTopBtn.onclick = function () {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+      };
+
+      // Function to send an email with product details
+      function sendEmail(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+
+        // Collect quantities
+        const kyllingsprayQty = document.getElementById(
+          "kyllingspray-quantity"
+        ).value;
+        const lamsprayQty = document.getElementById("lamspray-quantity").value;
+        const beefsprayQty = document.getElementById(
+          "beefflaske-quantity"
+        ).value;
+
+        // Construct the email body
+        const body = `I%20would%20like%20to%20order%20${kyllingsprayQty}%20units%20of%20Voffis%20kyllingspray,%20${lamsprayQty}%20units%20of%20Voffis%20lamspray,%20and%20${beefsprayQty}%20units%20of%20Voffis%20beefspray.`;
+        const mailtoLink = `mailto:voffis@gmail.com?subject=Order%20Details&body=${body}`;
+
+        // Redirect to mailto link
+        window.location.href = mailtoLink;
+      }
+    </script>
+  </body>
+</html>
